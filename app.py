@@ -19,7 +19,7 @@ from news_fetcher import fetch_headlines
 from model_compare import compare_next_step, small_backtest
 
 st.set_page_config(page_title="Weekly Stock Predictor", layout="wide")
-st.title("📈 Weekly Stock Predictor (Prophet + LSTM + Sentiment + News)")
+st.title("📈 Weekly Stock Predictor")
 
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
@@ -80,7 +80,7 @@ if "weekly" in st.session_state:
     st.line_chart(weekly.set_index("Date")["Close"].tail(150))
 
 st.markdown("---")
-st.header("🤖 LSTM Model")
+st.header("LSTM Model")
 
 if "weekly" not in st.session_state:
     st.info("Fetch data first.")
@@ -219,4 +219,5 @@ with cold:
             st.error(f"Backtest error: {e}")
 
 st.markdown("---")
+
 
