@@ -8,4 +8,5 @@ streamlit
 tensorflow
 joblib
 ta
+vaderSentiment
 plotly
